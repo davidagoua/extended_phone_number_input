@@ -121,7 +121,7 @@ class PhoneNumberInputController extends ChangeNotifier {
       return _errorText ?? 'الرجاء إدخال رقم الجوال';
     } else {
       try {
-        /*
+
         final englishNumber = arabicNumberConverter(phoneNumber);
         final phoneInfo =
             getPhoneNumberInfo('${_selectedCountry.dialCode}$englishNumber');
@@ -130,7 +130,7 @@ class PhoneNumberInputController extends ChangeNotifier {
         if (!isValid) {
           return _errorText ?? "الرجاء ادخال رقم جوال صحيح";
         }
-         */
+
         return null;
       } catch (e) {
         debugPrint(e.toString());

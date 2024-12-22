@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:extended_phone_number_input/models/country.dart';
 import 'package:extended_phone_number_input/utils/number_converter.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttercontactpicker/fluttercontactpicker.dart';
+import 'package:flutter_native_contact_picker/flutter_native_contact_picker.dart';
 import 'package:phone_numbers_parser/phone_numbers_parser.dart' as parserNumber;
 
 import 'models/countries_list.dart';

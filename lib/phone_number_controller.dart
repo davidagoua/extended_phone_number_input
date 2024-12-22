@@ -121,6 +121,7 @@ class PhoneNumberInputController extends ChangeNotifier {
       return _errorText ?? 'الرجاء إدخال رقم الجوال';
     } else {
       try {
+        /*
         final englishNumber = arabicNumberConverter(phoneNumber);
         final phoneInfo =
             getPhoneNumberInfo('${_selectedCountry.dialCode}$englishNumber');
@@ -129,6 +130,7 @@ class PhoneNumberInputController extends ChangeNotifier {
         if (!isValid) {
           return _errorText ?? "الرجاء ادخال رقم جوال صحيح";
         }
+         */
         return null;
       } catch (e) {
         debugPrint(e.toString());
@@ -183,11 +185,11 @@ class PhoneNumberInputController extends ChangeNotifier {
 
   Future<void> pickFromContacts() async {
     try {
-      if (!await FlutterContactPicker.hasPermission() && Platform.isAndroid) {
-        await FlutterContactPicker.requestPermission();
+      if (!await FlutterNativeContactPicker.hasPermission() && Platform.isAndroid) {
+        await FlutterNativeContactPicker.requestPermission();
       }
       final PhoneContact contact =
-          await FlutterContactPicker.pickPhoneContact();
+          await FlutterNativeContactPicker.pickPhoneContact();
       final String? number = contact.phoneNumber?.number;
       if (number != null) {
         phoneNumber = number.replaceAll(' ', '');
